@@ -187,7 +187,7 @@ FORK_OWNER_EMAIL=$(curl -L \
   -H "Accept: application/vnd.github+json" \
   -H "Authorization: Bearer ${TOKEN}" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
-  https://api.github.com/users/${FORK_OWNER} | jq .email)
+  https://api.github.com/users/${FORK_OWNER} | jq -r .email)
 
 echo -e "Sync fork with upstream:"
 SYNC_FORK_JSON=$(curl -s -L \
